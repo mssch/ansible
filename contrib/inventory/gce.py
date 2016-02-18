@@ -85,6 +85,9 @@ except ImportError:
 USER_AGENT_PRODUCT="Ansible-gce_inventory_plugin"
 USER_AGENT_VERSION="v1"
 
+import logging
+logging.getLogger('libcloud.common.google').addHandler(logging.NullHandler())
+
 import sys
 import os
 import argparse
